@@ -1,0 +1,5 @@
+def signup():
+	print("Please enter the username by which you \
+	wanna access your account")
+	username = input("please enter here: ")
+	password = input("Enter a password: ")

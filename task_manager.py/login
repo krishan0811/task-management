@@ -1,0 +1,28 @@
+def login():
+	print("Please enter your username ")
+	user_nm = input("Enter here: ")
+	
+	# Password as entered while logging in
+	pssd_wr = (input("enterr the password"))+'\n'
+	try:
+		usernm = user_nm+" task.txt"
+		f_ = open(usernm, 'r')
+		
+		# variable 'k' contains the password as saved
+		# in the file
+		k = f_.readlines(0)[0]
+		f_.close()
+		
+		# Checking if the Password entered is same as
+		# the password saved while signing in
+		if pssd_wr == k: 
+			print(
+				"1--to view your data \n2--To add task \n3--Update\
+				task status \n4--View task status")
+			a = input()
+		else:
+			print("SIR YOUR PASSWORD OR USERNAME IS WRONG , Plz enter Again")
+			login()
+	except Exception as e:
+		print(e)
+		login()
